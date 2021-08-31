@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import useSWR from 'swr';
 import PropTypes from 'prop-types';
 import BrewerySummaryGrid from '../components/BrewerySummaryGrid';
 import FeaturedBrewery from '../components/FeaturedBrewery';

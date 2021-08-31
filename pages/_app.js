@@ -1,12 +1,12 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { SWRConfig } from 'swr';
-import { useState, useEffect } from 'react';
 import { usePosition } from 'use-position';
 
 import theme from '../config/theme';
 import { PositionProvider } from '../utils/PositionContext';
 
 const GlobalStyle = createGlobalStyle`
+
   html,
   body {
     background-color: #efefef;
@@ -27,6 +27,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export default function App({ Component, pageProps }) {
+  //moved here from the FeaturedBrewery component
   const {
     latitude,
     longitude,

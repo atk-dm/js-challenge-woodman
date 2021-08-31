@@ -24,13 +24,9 @@ const BreweryGrid = styled.section`
   `}
 `;
 
-const BrewerySummaryGrid = ({
-  breweries,
-}) => (
+const BrewerySummaryGrid = ({ breweries }) => (
   <BreweryGrid>
-    <BrewerySummaryList
-      breweries={breweries}
-    />
+    <BrewerySummaryList breweries={breweries} />
   </BreweryGrid>
 );
 

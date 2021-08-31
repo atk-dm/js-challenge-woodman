@@ -2,8 +2,9 @@ import PropTypes from 'prop-types';
 import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import useSWR from 'swr';
+import { BreweryLoading } from '../BreweryLoading';
 
-import BrewerySummaryGrid from '../BrewerySummaryGrid'
+import BrewerySummaryGrid from '../BrewerySummaryGrid';
 
 const SearchWrapper = styled.section`
   padding: 3rem 1rem;
@@ -36,9 +37,7 @@ const SearchWrapper = styled.section`
   }
 `;
 
-const BrewerySearch = ({
-  query,
-}) => {
+const BrewerySearch = ({ query }) => {
   const [inputValue, setInputValue] = useState(query);
   const [searchTerm, setSearchTerm] = useState(query);
   const inputRef = useRef();
@@ -50,35 +49,37 @@ const BrewerySearch = ({
   const onSubmit = (evt) => {
     evt.preventDefault();
     setSearchTerm(inputRef.current.value);
-  }
+  };
 
   const onChange = (evt) => {
     setInputValue(evt.target.value);
-  }
+  };
 
   if (error) return null;
 
   return (
     <SearchWrapper>
-    <form onSubmit={onSubmit}>
-      <input
-        name="query"
-        onChange={onChange}
-        placeholder="Search breweries"
-        ref={inputRef}
-        type="search"
-        value={inputValue}
-      />
-      <button type="submit">Search</button>
-    </form>
-    {data ? (
-      <>
-        <p>Showing results for <strong>{searchTerm}</strong></p>
-        <BrewerySummaryGrid
-          breweries={data}
+      <form onSubmit={onSubmit}>
+        <input
+          name="query"
+          onChange={onChange}
+          placeholder="Search breweries"
+          ref={inputRef}
+          type="search"
+          value={inputValue}
         />
-      </>
-    ) : <div>Loading</div>}
+        <button type="submit">Search</button>
+      </form>
+      {data ? (
+        <>
+          <p>
+            Showing results for <strong>{searchTerm}</strong>
+          </p>
+          <BrewerySummaryGrid breweries={data} />
+        </>
+      ) : (
+        <BreweryLoading />
+      )}
     </SearchWrapper>
   );
 };

@@ -3,16 +3,12 @@ import PropTypes from 'prop-types';
 import BreweryDetail from '../../components/BreweryDetail';
 import BrewerIndexLayout from '../../layouts/BreweryLayout';
 
-export default function BreweryDetailPage({
-  data,
-}) {
+export default function BreweryDetailPage({ data }) {
   return (
     <BrewerIndexLayout>
-      <BreweryDetail
-        brewery={data}
-      />
+      <BreweryDetail brewery={data} />
     </BrewerIndexLayout>
-  )
+  );
 }
 
 BreweryDetailPage.propTypes = {
@@ -29,7 +25,9 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { id } = params;
   let statusCode = 200;
-  const response = await fetch(`https://api.openbrewerydb.org/breweries/${id}`).catch((err) => {
+  const response = await fetch(
+    `https://api.openbrewerydb.org/breweries/${id}`,
+  ).catch((err) => {
     statusCode = 500;
   });
   const data = await response.json();
