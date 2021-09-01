@@ -43,7 +43,7 @@ const BrewerySearch = ({ query }) => {
   const inputRef = useRef();
 
   const { data, error } = useSWR(
-    `https://api.openbrewerydb.org/breweries/search?query=${searchTerm}`,
+    () => `https://api.openbrewerydb.org/breweries/search?query=${searchTerm}`,
   );
 
   const onSubmit = (evt) => {

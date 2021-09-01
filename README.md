@@ -71,6 +71,21 @@ Below are several tasks from which you can choose. _**Please choose at least 3 o
 
 ## Tim Woodman Notes
 
+### CHALLENGE 3: Search AutoComplete in the site header
+
+#### Methodology
+
+- I moved the search form component in the BreweryLayout to it's own component `<SearchAutoComplete>`.
+- Utilizing the OpenBrewery autocomplete API a call is made on each input change in the search field
+- The result is passed into a new state, and the first 5 results are mapped to make the suggestion list.
+- Clicking the list item redirects to the Brewery detials using next/link and the clicked brewery id.
+- Sumbit event still brings user to the brewery search page with the current input value.
+
+### CHALLENGE 5: Search loading state
+
+- Utilized the existing component load logic in the BrewerySearch component for the `<BrewerySummaryGrid>` element. If brewery data is passed to the element load it if not load the `<BreweryLoading>` element.
+- I wanted to do somethign fun and play around with some animation for this one. I feel like the bottle/mug "cheers was a good fit. I played around with the animation time so that the animation was viewable on most load times.
+
 ### CHALLENGE 8: Index page grid geolocation
 
 #### Methodology

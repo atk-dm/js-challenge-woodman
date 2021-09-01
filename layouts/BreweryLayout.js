@@ -1,7 +1,8 @@
-import Head from 'next/head'
+import Head from 'next/head';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import styled from 'styled-components';
+import { SearchAutoComplete } from '../components/SearchAutoComplete';
 
 const LayoutWrapper = styled.div`
   background-color: white;
@@ -16,6 +17,9 @@ const LayoutWrapper = styled.div`
     background-color: black;
     color: white;
     display: flex;
+    height: 3rem;
+    justify-content: space-between;
+    text-align: center;
     padding: 0.5rem 1rem;
 
     form {
@@ -34,10 +38,7 @@ const LayoutWrapper = styled.div`
   }
 `;
 
-const BreweryIndexLayout = ({
-  children,
-  isSearch,
-}) => (
+const BreweryIndexLayout = ({ children, isSearch }) => (
   <LayoutWrapper>
     <Head>
       <title>ATK JS Challenge</title>
@@ -45,28 +46,11 @@ const BreweryIndexLayout = ({
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <header>
-      <Link
-        href="/"
-      >
-        Home
-      </Link>
-      {!isSearch && (
-        <form action="/search">
-          <input
-            name="q"
-            placeholder="Search breweries"
-            type="search"
-          />
-          <button type="submit">Search</button>
-        </form>
-      )}
+      <Link href="/">Home</Link>
+      {!isSearch && <SearchAutoComplete />}
     </header>
-    <main>
-      {children}
-    </main>
-    <footer>
-      Get Your Beer On
-    </footer>
+    <main>{children}</main>
+    <footer>Get Your Beer On</footer>
   </LayoutWrapper>
 );
 

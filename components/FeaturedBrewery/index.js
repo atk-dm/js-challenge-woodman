@@ -1,5 +1,4 @@
 import useSWR from 'swr';
-import { usePosition } from 'use-position';
 import BreweryHeroItem, { LoadingBreweryHeroItem } from '../BreweryHeroItem';
 import { usePositionContext } from '../../utils/PositionContext';
 

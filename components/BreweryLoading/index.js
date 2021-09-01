@@ -22,7 +22,7 @@ export const BreweryLoading = () => {
 
     .glass-left {
       width: 50px;
-      animation: tilt-leftside 2s infinite;
+      animation: tilt-leftside 1s infinite;
       animation-timing-function: linear;
       transform-origin: bottom center;
       margin-right: 5px;
@@ -30,7 +30,7 @@ export const BreweryLoading = () => {
 
     .glass-right {
       width: 50px;
-      animation: tilt-rightside 2s infinite;
+      animation: tilt-rightside 1s infinite;
       animation-timing-function: linear;
       transform-origin: bottom center;
       margin-left: 5px;
