@@ -47,7 +47,6 @@ const AutoCompleteWrapper = styled.section`
 
 export const SearchAutoComplete = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [showSuggestions, setShowSuggestions] = useState(false);
   const [activeOption, setActiveOption] = useState(-1);
   const [autoCompleteList, setAutoCompleteList] = useState();
 
@@ -55,10 +54,6 @@ export const SearchAutoComplete = () => {
   const handleSearchInput = (searchTerm) => {
     setSearchTerm(searchTerm);
     callAutoCompleteAPI();
-    if (searchTerm.length > 0) {
-      setShowSuggestions(false);
-    }
-    setShowSuggestions(true);
   };
 
   //keydown events to specify
@@ -93,8 +88,10 @@ export const SearchAutoComplete = () => {
       statusCode = 500;
     });
     const data = await response.json();
-    setAutoCompleteList(data);
+    setAutoCompleteList(data.slice(0, 5));
   }
+
+  console.log(autoCompleteList);
 
   return (
     <AutoCompleteWrapper>
@@ -111,9 +108,9 @@ export const SearchAutoComplete = () => {
           />
           <button type="submit">Search</button>
         </form>
-        {autoCompleteList && showSuggestions ? (
+        {autoCompleteList && searchTerm ? (
           <ul>
-            {autoCompleteList.slice(0, 5).map((result, index) => {
+            {autoCompleteList.map((result, index) => {
               let className;
               if (index === activeOption) {
                 className = 'option__active';
