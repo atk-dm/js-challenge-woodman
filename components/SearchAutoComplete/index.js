@@ -8,28 +8,27 @@ const AutoCompleteWrapper = styled.section`
     flex-direction: column;
     align-items: flex-start;
     width: 250px;
-    
   }
   form {
     display: flex;
-    justfy-content: flex-end;
+    justify-content: flex-end;
     margin: 0 !important;
   }
   ul {
-    padding: 0;
-    border: solid 1px grey;
-    padding-left: 0.125rem
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
+    margin: 0;
+    padding: 0;
     background-color: white;
     color: black;
-    margin: 0;
+    border: solid 1px grey;
+    padding-left: 0.125rem;
   }
   li {
     list-style-type: none;
-    font-size: .75rem;
+    font-size: 0.75rem;
 
     padding-top: 0.125rem;
     padding-bottom: 0.125rem;
@@ -38,11 +37,11 @@ const AutoCompleteWrapper = styled.section`
   }
 
   .option__active {
-    background-color: yellow
+    background-color: yellow;
   }
 
   li:hover {
-    font-weight: bold
+    font-weight: bold;
   }
 `;
 

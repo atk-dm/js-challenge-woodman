@@ -5,6 +5,7 @@ import Image from 'next/image';
 export const BreweryLoading = () => {
   const BreweryLoad = styled.article`
     .loading-header {
+      margin-bottom: 15px;
       text-align: center;
       color: yellow;
       text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
@@ -12,7 +13,6 @@ export const BreweryLoading = () => {
       font-size: 48px;
       font-family: 'Oleo Script Swash Caps', cursive;
       font-weight: bold;
-      margin-bottom: 15px;
     }
     .beer-container {
       display: flex;
@@ -22,18 +22,18 @@ export const BreweryLoading = () => {
 
     .glass-left {
       width: 50px;
+      margin-right: 5px;
       animation: tilt-leftside 1s infinite;
       animation-timing-function: linear;
       transform-origin: bottom center;
-      margin-right: 5px;
     }
 
     .glass-right {
       width: 50px;
+      margin-left: 5px;
       animation: tilt-rightside 1s infinite;
       animation-timing-function: linear;
       transform-origin: bottom center;
-      margin-left: 5px;
     }
 
     @keyframes tilt-leftside {
