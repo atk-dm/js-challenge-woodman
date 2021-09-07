@@ -91,8 +91,6 @@ export const SearchAutoComplete = () => {
     setAutoCompleteList(data.slice(0, 5));
   }
 
-  console.log(autoCompleteList);
-
   return (
     <AutoCompleteWrapper>
       <div className="search__container">
