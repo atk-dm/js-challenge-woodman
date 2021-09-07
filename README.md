@@ -103,7 +103,7 @@ Below are several tasks from which you can choose. _**Please choose at least 3 o
 - I tested some more coordinates in Postman with similar results
 
 Downtown San Diego Coords
-![San Diego Postman test]("./public/SDtest.PNG")
+![San Diego Postman test]("https://github.com/atk-dm/js-challenge-woodman/blob/main/public/SDtest.PNG")
 
 Downtown Portland, ME Coords
 ![Portland Test]("./public/Portland_test.PNG")
