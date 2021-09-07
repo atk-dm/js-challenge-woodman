@@ -102,12 +102,8 @@ Below are several tasks from which you can choose. _**Please choose at least 3 o
 - The Open Brewery API sends back the same item for any coordinates passed in. I found this issue when testing the usePosition hook vs the fallback coordinates in the FeaturedBrewery component. It sends back Bnaf, LLC every time with `{"longitude": null, "latitude": null}`
 - I tested some more coordinates in Postman with similar results
 
-Downtown San Diego Coords
-<<<<<<< HEAD
+Downtown San Diego Coordinates
 ![San Diego Postman test](./public/SDtest.PNG)
-=======
-![San Diego Postman test]("https://github.com/atk-dm/js-challenge-woodman/blob/main/public/SDtest.PNG")
->>>>>>> dc84078386312440b00eee360d7166e67fd484a2
 
-Downtown Portland, ME Coords
+Downtown Portland, ME Coordinates
 ![Portland Test](./public/Portland_test.PNG)
